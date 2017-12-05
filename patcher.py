@@ -41,9 +41,9 @@ def patch_binary(binary, hashed, filename):
     copy = data
     for offset in offsets:
         print 'patching offset 0x%d' % offset
-        newbinary = data[:offset]
+        newbinary = copy[:offset]
         newbinary += hashed
-        newbinary += data[offset+16:]
+        newbinary += copy[offset+16:]
         copy = newbinary
 
     fd = open("%s.cracked.exe" % filename.replace(".exe", ""), "wb")
