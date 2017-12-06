@@ -21,7 +21,8 @@ def extract_random(filename):
         serial += data[off+i]
     return serial
 
-old_hash = extract_random("WindowsApplication1._TECH.bin")
+#old_hash = extract_random("WindowsApplication1._TECH.bin")
+old_hash = extract_from("WindowsApplication1._TECH.bin")
 
 def patch_binary(binary, hashed, filename):
     fd = open(filename, "rb")
